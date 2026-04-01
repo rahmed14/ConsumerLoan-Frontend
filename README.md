@@ -1,59 +1,132 @@
-# LoanFrontend
+# 4️⃣ README — `Consumerloan-Frontend`
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.2.
-
-## Development server
-
-To start a local development server, run:
-
-```bash
+# Tech Stack
+•	Angular 
+•	TypeScript 
+•	HTML 
+•	CSS 
+•	REST API integration 
+•	Docker 
+•	Nginx 
+•	AWS EC2 
+ 
+# Features
+•	Loan application form UI 
+•	Applicant data input 
+•	API integration with backend 
+•	Display response on UI 
+•	Simple full-stack demo flow 
+•	Docker-ready frontend deployment 
+•	Static deployment using Nginx 
+ 
+# Main Screens
+•	Application intake form 
+•	Applicant details section 
+•	Income and address inputs 
+•	Response / result display 
+ 
+# How to Run Locally
+1. Clone the repository
+git clone <your-github-link>
+cd Consumerloan-Frontend
+2. Install dependencies
+npm install
+3. Configure backend API URL
+Make sure your Angular service points to the backend endpoint:
+Example:
+http://localhost:9097/consumerloans/loan/applications
+4. Run locally
 ng serve
-```
+5. Open in browser
+http://localhost:4200
+ 
+# Production / Deployment Notes
+This frontend can be built and deployed as a static app using Nginx.
+Build production bundle
+ng build --configuration production
+Docker-ready deployment
+Can be deployed using Docker + Nginx and hosted on AWS EC2.
+ 
+# Future Enhancements
+•	Better form validation 
+•	Response page improvements 
+•	Better UI styling / responsiveness 
+•	Add decision timeline display 
+•	Add error handling and loading indicators 
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+# 🔥 RECOMMENDED EXTRA FILES FOR ALL REPOS
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+For each repo, also add:
 
-```bash
-ng generate component component-name
-```
+## `.gitignore`
+If not already there.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## `screenshots/`
+Later add:
+- UI screenshots
+- Postman screenshots
+- architecture image
 
-```bash
-ng generate --help
-```
+## `LICENSE` (optional)
+MIT License is fine.
 
-## Building
+---
+## `README.md`
 
-To build the project run:
+```md
+# ConsumerLoan Frontend
 
-```bash
-ng build
-```
+## Overview
+ConsumerLoan Frontend is the Angular-based user interface for the Consumer Loan Decision Engine system.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+It provides a simple web interface where users can:
+- enter loan application details
+- submit a loan application
+- view the response / decision result
 
-## Running unit tests
+This frontend communicates with the backend ConsumerLoans Main Service using REST APIs.
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+---
 
-```bash
-ng test
-```
+## What It Does
 
-## Running end-to-end tests
+This project serves as the frontend client for the loan decisioning system.
 
-For end-to-end (e2e) testing, run:
+It allows users to:
+- input applicant and application data
+- submit loan requests to the backend
+- display application response results
+- simulate a real-world lending application intake UI
 
-```bash
-ng e2e
-```
+This project is intended to demonstrate full-stack integration between Angular and Spring Boot services.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## Architecture Diagram
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```text
+User
+ |
+ v
+Angular Frontend
+ |
+ v
+ConsumerLoans Main Service
+ |---------------------> Fraud Service
+ |---------------------> Post-Bureau Service
+UI Flow
+Loan Application Form
+        |
+        v
+Submit to Backend API
+        |
+        v
+Receive Response
+        |
+        v
+Display Result / Decision
+ 
+
+
