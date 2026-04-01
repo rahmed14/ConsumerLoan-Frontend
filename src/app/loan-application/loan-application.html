@@ -1,0 +1,224 @@
+<div class="page">
+       <div class="loan-card">
+              <h1>Consumer Loan Application</h1>
+              <p class="subtitle">Fill out the form below and submit your application.</p>
+
+              <form (ngSubmit)="submitApplication()" #loanForm="ngForm">
+
+                     <div class="section">
+                            <h2>Application Details</h2>
+                            <div class="grid">
+                                   <div class="field">
+                                          <label>External Application ID</label>
+                                          <input type="text" name="externalApplicationId"
+                                                 [(ngModel)]="formData.externalApplicationId" required>
+                                   </div>
+
+                                   <div class="field">
+                                          <label>Channel</label>
+                                          <select name="channel" [(ngModel)]="formData.channel" required>
+                                                 <option value="WEB">WEB</option>
+                                                 <option value="MOBILE">MOBILE</option>
+                                                 <option value="BRANCH">BRANCH</option>
+                                          </select>
+                                   </div>
+
+                                   <div class="field">
+                                          <label>Product Type</label>
+                                          <select name="productType" [(ngModel)]="formData.productType" required>
+                                                 <option value="">Select</option>
+                                                 <option value="SECURED">SECURED</option>
+                                                 <option value="UNSECURED">UNSECURED</option>
+                                          </select>
+                                   </div>
+
+                                   <div class="field">
+                                          <label>Requested Amount</label>
+                                          <input type="number" name="requestedAmount"
+                                                 [(ngModel)]="formData.requestedAmount" required>
+                                   </div>
+
+                                   <div class="field">
+                                          <label>Term Months</label>
+                                          <input type="number" name="termMonths" [(ngModel)]="formData.termMonths"
+                                                 required>
+                                   </div>
+
+                                   <div class="field">
+                                          <label>SSN</label>
+                                          <input type="text" name="ssn" [(ngModel)]="formData.ssn" maxlength="9"
+                                                 required>
+                                   </div>
+                            </div>
+                     </div>
+
+                     <div class="section">
+                            <h2>Applicant Information</h2>
+                            <div class="grid">
+                                   <div class="field">
+                                          <label>Date of Birth</label>
+                                          <input type="date" name="dob" [(ngModel)]="formData.applicant.dob" required>
+                                   </div>
+
+                                   <div class="field">
+                                          <label>Email</label>
+                                          <input type="email" name="email" [(ngModel)]="formData.applicant.email"
+                                                 required>
+                                   </div>
+
+                                   <div class="field">
+                                          <label>Employment Type</label>
+                                          <select name="employmentType" [(ngModel)]="formData.applicant.employmentType"
+                                                 required>
+                                                 <option value="">Select</option>
+                                                 <option value="FULL_TIME">FULL_TIME</option>
+                                                 <option value="PART_TIME">PART_TIME</option>
+                                                 <option value="SELF_EMPLOYED">SELF_EMPLOYED</option>
+                                                 <option value="UNEMPLOYED">UNEMPLOYED</option>
+                                          </select>
+                                   </div>
+
+                                   <div class="field">
+                                          <label>Length Of Employment</label>
+                                          <select name="lengthOfEmployment"
+                                                 [(ngModel)]="formData.applicant.lengthOfEmployment" required>
+                                                 <option value="">Select</option>
+                                                 <option value="LESS_THAN_1_YEAR">LESS_THAN_1_YEAR</option>
+                                                 <option value="1_YEAR">1_YEAR</option>
+                                                 <option value="2_YEARS">2_YEARS</option>
+                                                 <option value="3_YEARS">3_YEARS</option>
+                                                 <option value="5_YEARS">5_YEARS</option>
+                                                 <option value="10_PLUS_YEARS">10_PLUS_YEARS</option>
+                                          </select>
+                                   </div>
+                            </div>
+                     </div>
+
+                     <div class="section">
+                            <h2>Income Information</h2>
+                            <div class="grid">
+                                   <div class="field">
+                                          <label>Income Frequency</label>
+                                          <select name="incomeFrequency"
+                                                 [(ngModel)]="formData.applicant.income.incomeFrequency" required>
+                                                 <option value="">Select</option>
+                                                 <option value="WEEKLY">WEEKLY</option>
+                                                 <option value="BI_WEEKLY">BI_WEEKLY</option>
+                                                 <option value="MONTHLY">MONTHLY</option>
+                                          </select>
+                                   </div>
+
+                                   <div class="field">
+                                          <label>Primary Income Amount</label>
+                                          <input type="number" name="primaryIncomeAmt"
+                                                 [(ngModel)]="formData.applicant.income.primaryIncomeAmt" required>
+                                   </div>
+
+                                   <div class="field">
+                                          <label>Rent / Own</label>
+                                          <select name="rentOwn" [(ngModel)]="formData.applicant.income.rentOwn"
+                                                 required>
+                                                 <option value="">Select</option>
+                                                 <option value="RENT">RENT</option>
+                                                 <option value="OWN">OWN</option>
+                                          </select>
+                                   </div>
+
+                                   <div class="field">
+                                          <label>Rent Payment</label>
+                                          <input type="number" name="rentPayment"
+                                                 [(ngModel)]="formData.applicant.income.rentPayment" required>
+                                   </div>
+                            </div>
+                     </div>
+
+                     <div class="section">
+                            <h2>Address Information</h2>
+                            <div class="grid">
+                                   <div class="field">
+                                          <label>Address Type</label>
+                                          <select name="addressType"
+                                                 [(ngModel)]="formData.applicant.address.addressType" required>
+                                                 <option value="">Select</option>
+                                                 <option value="HOME">HOME</option>
+                                                 <option value="MAILING">MAILING</option>
+                                          </select>
+                                   </div>
+
+                                   <div class="field">
+                                          <label>Street Number</label>
+                                          <input type="text" name="streetNbr"
+                                                 [(ngModel)]="formData.applicant.address.streetNbr" required>
+                                   </div>
+
+                                   <div class="field">
+                                          <label>Street Name</label>
+                                          <input type="text" name="streetName"
+                                                 [(ngModel)]="formData.applicant.address.streetName" required>
+                                   </div>
+
+                                   <div class="field">
+                                          <label>City</label>
+                                          <input type="text" name="city" [(ngModel)]="formData.applicant.address.city"
+                                                 required>
+                                   </div>
+
+                                   <div class="field">
+                                          <label>State</label>
+                                          <input type="text" name="state" [(ngModel)]="formData.applicant.address.state"
+                                                 required>
+                                   </div>
+
+                                   <div class="field">
+                                          <label>Country</label>
+                                          <input type="text" name="country"
+                                                 [(ngModel)]="formData.applicant.address.country" required>
+                                   </div>
+
+                                   <div class="field">
+                                          <label>ZIP</label>
+                                          <input type="text" name="zip" [(ngModel)]="formData.applicant.address.zip"
+                                                 required>
+                                   </div>
+                            </div>
+                     </div>
+
+                     <div class="button-row">
+                            <button type="submit" [disabled]="loanForm.invalid">Submit Application</button>
+                     </div>
+              </form>
+
+              <div *ngIf="errorMessage" class="error-box">
+                     {{ errorMessage }}
+              </div>
+
+              <div *ngIf="decisionResult" class="result-box">
+
+                     <h2>Loan Decision Result</h2>
+
+                     <p>
+                            <strong>Application ID:</strong>
+                            {{ decisionResult.externalApplicationId }}
+                     </p>
+
+                     <p>
+                            <strong>Status:</strong>
+                            {{ decisionResult.status }}
+                     </p>
+
+                     <p>
+                            <strong>Decision:</strong>
+                            {{ decisionResult.decisionReasons?.decision }}
+                     </p>
+
+                     <h3>Decision Checks</h3>
+
+                     <ul>
+                            <li *ngFor="let reason of decisionResult.decisionReasons?.reasons">
+                                   {{ reason }}
+                            </li>
+                     </ul>
+
+              </div>
+       </div>
+</div>
